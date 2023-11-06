@@ -68,6 +68,10 @@
     color: blue;
   }
 
+  .selected .image-content {
+    opacity: 0.75;
+  }
+
 /* Style for the button container, matching the image container */
 .gallery-wrap .add-images-button-container {
   position: relative;

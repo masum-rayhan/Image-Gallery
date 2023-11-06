@@ -42,7 +42,7 @@ export const DraggableImage = ({
           }`}
           onClick={handleImageClick}
         >
-          <div>
+          <div className="image-content">
             <img src={src} alt={`${id}`} className="image" />
             <div className="selection-overlay">
               <FontAwesomeIcon
