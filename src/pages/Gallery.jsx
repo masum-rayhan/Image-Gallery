@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { closestCenter, DndContext } from "@dnd-kit/core";
+import { closestCenter, DndContext, useSensors } from "@dnd-kit/core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faImage, faImages } from "@fortawesome/free-solid-svg-icons";
-import { faSquare, faCheckSquare } from "@fortawesome/free-solid-svg-icons";
+import { MouseSensor, TouchSensor, useSensor } from "@dnd-kit/core";
+
 import {
   arrayMove,
   SortableContext,
@@ -16,6 +17,22 @@ export const Gallery = ({
   selectedImages,
   onImageClick,
 }) => {
+
+  const sensors = useSensors(
+    useSensor(MouseSensor, {
+      // Require the mouse to move by 10 pixels before activating
+      activationConstraint: {
+        distance: 10,
+      },
+    }),
+    useSensor(TouchSensor, {
+      // Press delay of 250ms, with tolerance of 5px of movement
+      activationConstraint: {
+        delay: 250,
+        tolerance: 5,
+      },
+    }),
+  );
 
   // Function to handle the end of a drag and drop operation
   const handleOnDragEnd = (event) => {
@@ -47,6 +64,7 @@ export const Gallery = ({
       <DndContext
         collisionDetection={closestCenter}
         onDragEnd={handleOnDragEnd}
+        sensors={sensors}
       >
         <SortableContext items={images} strategy={verticalListSortingStrategy}>
           {images.map(({ id, src }, index) => {

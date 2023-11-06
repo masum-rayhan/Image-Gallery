@@ -26,6 +26,7 @@ export const DraggableImage = ({
 
   // Function to handle image clicks and pass the image ID to the parent component
   const handleImageClick = () => {
+    console.log('Image clicked with a single click');
     onClick(id);
   };
 
