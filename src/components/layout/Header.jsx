@@ -17,7 +17,7 @@ export const Header = ({ selectedCount, onDelete }) => {
                 <FontAwesomeIcon icon={faCheckSquare} className="check-icon" />
               </div>
               <div className="selected-count">
-                <h1>{`${selectedCount} Files${
+                <h1>{`${selectedCount} File${
                   selectedCount > 1 ? "s" : ""
                 } Selected`}</h1>
               </div>
