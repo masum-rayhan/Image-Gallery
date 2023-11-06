@@ -12,10 +12,8 @@ const App = () => {
   const handleImageClick = (id) => {
     setSelectedImages((prevSelectedImages) => {
       if (prevSelectedImages.includes(id)) {
-        console.log('Image already selected, removing from selection');
         return prevSelectedImages.filter((imageId) => imageId !== id);
       } else {
-        console.log('Image not selected, adding to selection');
         return [...prevSelectedImages, id];
       }
     });
