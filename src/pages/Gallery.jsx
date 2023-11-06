@@ -16,19 +16,24 @@ export const Gallery = ({
   selectedImages,
   onImageClick,
 }) => {
+
+  // Function to handle the end of a drag and drop operation
   const handleOnDragEnd = (event) => {
     const { active, over } = event;
 
     if (active?.id && over?.id && active.id !== over.id) {
       setImages((currentImages) => {
+        // Find the old and new indexes of the dragged images
         const oldIndex = currentImages.findIndex(
           (image) => image.id === active.id
         );
         const newIndex = currentImages.findIndex(
           (image) => image.id === over.id
         );
+        // Rearrange the images array
         const updatedImages = arrayMove(currentImages, oldIndex, newIndex);
 
+        // Update the selected state of images based on selectedImages array
         return updatedImages.map((image, index) => ({
           ...image,
           selected: selectedImages.includes(image.id),

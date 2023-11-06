@@ -5,9 +5,10 @@ import "../src/pages/Gallery.css";
 import { Header } from "./components/layout/Header";
 
 const App = () => {
-  const [images, setImages] = useState(imageGallery);
-  const [selectedImages, setSelectedImages] = useState([]);
+  const [images, setImages] = useState(imageGallery); // State for image gallery
+  const [selectedImages, setSelectedImages] = useState([]); // State for selected images
 
+  // Function to handle clicking on images to select/deselect them
   const handleImageClick = (id) => {
     setSelectedImages((prevSelectedImages) => {
       if (prevSelectedImages.includes(id)) {
@@ -20,6 +21,7 @@ const App = () => {
     });
   };
 
+  // Function for handle delete 
   const handleDelete = () => {
     const updatedImages = images.filter(
       (image) => !selectedImages.includes(image.id)

@@ -11,17 +11,20 @@ export const DraggableImage = ({
   onClick
 }) => {
 
+  // Using the `useSortable` hook to enable drag-and-drop functionality
   const { attributes, listeners, setNodeRef, transform, transition } =
     useSortable({
       id,
       // selected: isSelected,
     });
 
+    // Applying styles to the image container based on drag-and-drop transformations
   const style = {
     transition,
     transform: transform ? `translate(${transform.x}px, ${transform.y}px)` : "",
   };
 
+  // Function to handle image clicks and pass the image ID to the parent component
   const handleImageClick = () => {
     onClick(id);
   };
@@ -29,10 +32,10 @@ export const DraggableImage = ({
   return (
     <>
         <div
-          ref={setNodeRef}
+          ref={setNodeRef} // Reference for the draggable image element
           style={style}
-          {...attributes}
-          {...listeners}
+          {...attributes} // Drag-and-drop attributes
+          {...listeners} // Drag-and-drop event listeners
           className={`image-container ${index === 0 ? "featured-image" : ""} ${
             isSelected ? "selected" : ""
           }`}

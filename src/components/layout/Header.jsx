@@ -6,9 +6,9 @@ export const Header = ({ selectedCount, onDelete }) => {
     return (
       <>
         <header className="gallery-header">
-          {selectedCount === 0 ? (
+          {selectedCount === 0 ? ( // Display header differently based on selectedCount
             <>
-              <h1>Gallery</h1>
+               <h1>Gallery</h1>  {/*Gallery title when no items are selected */}
               <hr />
             </>
           ) : (
