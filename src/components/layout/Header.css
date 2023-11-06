@@ -1,0 +1,47 @@
+.gallery-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e0e0e0 ;
+    padding: 10px;
+    max-height: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.gallery-header h1 {
+    margin: 0;
+  }
+
+  .gallery-header h2 {
+    margin: 0;
+    font-size: 16px;
+  }
+  
+  .delete-text {
+    cursor: pointer;
+    color: red;
+    font-weight: bold;
+    font-size: 20px;
+    margin: 0;
+  }
+
+  .selected-header {
+    display: flex;
+    align-items: center;
+  }
+  
+  .check-icon-container {
+    margin-right: 8px;
+  }
+
+  .check-icon {
+    color: blue;
+    font-size: 32px;
+    margin-right: 8px;
+  }
+
+  .selected-count {
+    display: flex;
+    align-items: center;
+  }

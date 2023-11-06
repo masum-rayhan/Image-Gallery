@@ -1,0 +1,172 @@
+.gallery-wrap {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 30px;
+    align-items: center;
+    justify-items: center;
+    max-width: 1400px;
+    max-height: 100%;
+    margin: 40px auto;
+  }
+  
+  .gallery-wrap .image-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 5px solid #c9c6c6;
+    cursor: pointer;
+    max-width: 100%;
+    max-height: 100%;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+  
+  .gallery-wrap .image-container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+  }
+  
+  .gallery-wrap .featured-image {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+  
+  .selection-box {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: white;
+    /* padding: 6px 6px; */
+    font-size: 40px;
+  }
+  
+  .selection-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.2s;
+    cursor: pointer;
+    /* border-radius: 15px; */
+  }
+  
+  .image-container:hover .selection-overlay,
+  .selected .selection-overlay {
+    opacity: 1;
+  }
+  .selected {
+    color: blue;
+  }
+
+/* Style for the button container, matching the image container */
+.gallery-wrap .add-images-button-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 5px dotted #c9c6c6;
+  cursor: pointer;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  max-height: 100%;
+  transition: transform 0.3s, box-shadow 0.3s;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+/* Style for the icon within the button */
+.gallery-wrap .add-images-button-container .add-images-icon {
+  font-size: 30px;
+}
+
+/* Style for the text within the button */
+.gallery-wrap .add-images-button-container .add-images-text {
+  font-size: 20px;
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .gallery-wrap {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+  }
+
+  .gallery-wrap .image-container {
+    border: 1px solid #e0e0e0;
+  }
+
+  .gallery-wrap .image-container img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .gallery-wrap .add-images-button-container {
+    /* Adjust button styles for smaller screens */
+    width: 80%;
+    max-width: 80%;
+  }
+
+  .gallery-wrap .add-images-button-container .add-images-icon {
+    /* Adjust icon styles for smaller screens */
+    font-size: 24px;
+  }
+
+  .gallery-wrap .add-images-button-container .add-images-text {
+    /* Adjust text styles for smaller screens */
+    font-size: 16px;
+  }
+}
+
+/* Media query for even smaller screens */
+@media (max-width: 480px) {
+  gallery-wrap {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    /* overflow: auto; */
+  }
+
+  .gallery-wrap .image-container {
+    border: 1px solid #e0e0e0;
+  }
+
+  .gallery-wrap .image-container img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .gallery-wrap .add-images-button-container {
+    /* Adjust button styles for even smaller screens */
+    width: 60%;
+    max-width: 60%;
+  }
+
+  .gallery-wrap .add-images-button-container .add-images-icon {
+    /* Adjust icon styles for even smaller screens */
+    font-size: 20px;
+  }
+
+  .gallery-wrap .add-images-button-container .add-images-text {
+    /* Adjust text styles for even smaller screens */
+    font-size: 14px;
+  }
+}
+
+
+
+  
