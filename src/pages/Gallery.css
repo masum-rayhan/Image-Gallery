@@ -84,6 +84,7 @@
   transition: transform 0.3s, box-shadow 0.3s;
   border-radius: 20px;
   overflow: hidden;
+  flex-grow: 1;
 }
 
 /* Style for the icon within the button */
@@ -118,8 +119,7 @@
 
   .gallery-wrap .add-images-button-container {
     /* Adjust button styles for smaller screens */
-    width: 80%;
-    max-width: 80%;
+    flex-grow: 0;
   }
 
   .gallery-wrap .add-images-button-container .add-images-icon {
@@ -152,8 +152,7 @@
 
   .gallery-wrap .add-images-button-container {
     /* Adjust button styles for even smaller screens */
-    width: 60%;
-    max-width: 60%;
+    flex-grow: 0;
   }
 
   .gallery-wrap .add-images-button-container .add-images-icon {
