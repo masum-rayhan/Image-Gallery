@@ -1,4 +1,6 @@
-# React + Vite
+# Draggable Image Gallery
+
+an Image Gallery boasting advanced functionalities like drag-and-drop options. Take a look at the gallery here. https://images-gallery-react.netlify.app/
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
